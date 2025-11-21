@@ -13,12 +13,6 @@ export function baseOptions(): BaseLayoutProps {
         url: '/docs',
         active: 'nested-url',
       },
-      {
-        icon: <BookOpen />,
-        text: 'Guides',
-        url: '/guides',
-        active: 'nested-url',
-      },
     ]
   };
 }
