@@ -23,7 +23,7 @@ jobs:
           pull_request_title: 'New translations from Crowdin'
           pull_request_body: 'Completed translations have been downloaded.'
           localization_branch_name: crowdin-translations
-          pull_request_base_branch_name: main
+          pull_request_base_branch_name: dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
