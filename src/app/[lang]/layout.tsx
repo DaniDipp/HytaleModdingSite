@@ -27,7 +27,6 @@ export default async function RootLayout({
   children,
   params,
 }: LayoutProps<"/[lang]">) {
-  "use cache";
   const { lang } = await params;
   const dir = lang.startsWith("ar") ? "rtl" : "ltr";
 

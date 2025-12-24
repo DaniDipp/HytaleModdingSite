@@ -3,7 +3,6 @@
 import { Sponsor } from "@/lib/types/sponsor";
 
 export async function getDiscordStats() {
-  "use cache";
   try {
     const response = await fetch(
       "https://api.internal.hytalemodding.guide/guild/stats",
@@ -33,7 +32,6 @@ export async function getDiscordStats() {
 }
 
 export async function getSponsors(): Promise<Sponsor[]> {
-  "use cache";
   try {
     const response = await fetch(
       "https://opencollective.com/hytalemodding/members.json",
