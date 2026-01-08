@@ -21,6 +21,7 @@ export const i18n = defineI18n({
     "ro-RO",
     "ru-RU",
     "tr-TR",
+    "uk-UK",
     "vi-VN",
   ],
   parser: "dir",
