@@ -1,6 +1,11 @@
 ---
 title: "8 - Feeding the Orge"
+authors:
+  - name: "Hypixel Studios Canada Inc."
+    url: "https://hytale.com"
 ---
+
+<OfficialDocumentationNotice />
 
 Lest we forget, there was another significantly more complex idle behaviour we have to implement:
 
@@ -10,7 +15,7 @@ Lest we forget, there was another significantly more complex idle behaviour we h
 
 This one might be a bit trickier. When we pick this behaviour we need to scan the area to see if there is any food. If we find it, we head over, pretend to grab it, and then set to eating.
 
-But what if we don't find any food? We should probably still pretend to go looking for it - it's not like this ogre is omniscient and already knows there's no food where it expects it because the sensor said there wasn't...right?
+But what if we *don't* find any food? We should probably still pretend to go looking for it - it's not like this ogre is omniscient and already knows there's no food where it expects it because the sensor said there wasn't...*right?*
 
 We start by creating our `.FindFood` substate immediately after `.Guard`.
 
@@ -58,9 +63,9 @@ We then add it to our list of random actions.
 
 ```
 
-Next we want to perform the actual search for food. But what is food? And not in a philosophical sense. What kinds of food does this ogre look for? This is another point where we might want to have a chat with the designers. Do they want it to go after multiple different things? Or is there one particular type of food a goblin ogre is interested in?
+Next we want to perform the actual search for food. But what *is* food? And not in a philosophical sense. What kinds of food does this ogre look for? This is another point where we might want to have a chat with the designers. Do they want it to go after multiple different things? Or is there one particular type of food a goblin ogre is interested in?
 
-A quick discussion with our designers reveals we've been working under an incorrect assumption and highlights the importance of ensuring that we thoroughly understand both the contents of the design specifications, and the intent behind them. This ogre is meant to be a guard and shouldn't leave his post. He should never actively set off to find food, but rather whip something out of a pocket and eat it on the spot.
+A quick discussion with our designers reveals we've been working under an incorrect assumption and highlights the importance of ensuring that we thoroughly understand both the contents of the design specifications, and the *intent behind them*. This ogre is meant to be a guard and shouldn't leave his post. He should never actively set off to find food, but rather whip something out of a pocket and eat it on the spot.
 
 Okay. That makes things significantly easier! We can now cross off one of our idle substates:
 
@@ -116,7 +121,7 @@ To accommodate that, let's add an `EatItem` parameter and accompanying descripti
 
 ```
 
-Now we just need to set up another PlayAnimation action, much like in the Sleep state, to handle the eating itself.
+Now we just need to set up another `PlayAnimation` action, much like in the `Sleep` state, to handle the eating itself.
 
 ```json
 "Sensor": {
@@ -148,7 +153,7 @@ Now we just need to set up another PlayAnimation action, much like in the Sleep 
 
 ```
 
-This looks awfully familiar... Could this be something we want to do often in many NPCs? Might we frequently want to play an animation for a specific random duration? I'd say yes, so let's make it a component!
+This looks *awfully* familiar... Could this be something we want to do often in many NPCs? Might we frequently want to play an animation for a specific random duration? I'd say yes, so let's make it a component!
 
 ```json
 {
