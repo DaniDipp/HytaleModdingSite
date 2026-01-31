@@ -20,7 +20,6 @@ export default async function Layout({
           {...baseOptions(lang, true)}
           githubUrl="https://github.com/HytaleModding/site"
           sidebar={{
-            banner: <DocsBanner />,
             footer: <DocsFooter />,
           }}
         >
